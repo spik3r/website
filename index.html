@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <link class="favicon" rel="icon" type="image/png" href="bikeIcon.png" />
-    <!-- <link rel="icon" type="image/svg+xml" href="favicon.svg" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kai Tait</title>
     <link rel="stylesheet" href="style.css" />
@@ -15,7 +14,7 @@
 
   <body class="body">
     <div class="header-bar navbar">
-      <img class="nav-image" src="me.jpg" alt="Me" />
+      <img class="nav-image" src="profilePhoto.jpg" alt="Me" />
       <h1 class="name-box">Kai Tait</h1>
       <div class="nav-spacer"></div>
       <nav class="hamburger-nav">
@@ -42,33 +41,9 @@
           </li>
         </ul>
       </nav>
-
-      <!-- desktop -->
-      <!-- <ul class="links-bar">
-        <div class="links-bar-spacer"></div>
-        <li class="menu-item">
-          <a
-            href="https://stackoverflow.com/users/4244112/kai"
-            class="fa fa-stack-overflow nav-link"
-          ></a
-          >stackoverflow
-        </li>
-        <li class="menu-item">
-          <a href="https://github.com/spik3r" class="fa fa-github nav-link"></a
-          >github
-        </li>
-        <li class="menu-item">
-          <a
-            href="https://www.linkedin.com/in/kaiftait"
-            class="fa fa-linkedin nav-link"
-          ></a
-          >linkedin
-        </li>
-      </ul> -->
     </div>
     <div class="bg-image">
       <div class="bg-drawing">
-        <!-- <div class="bg-drawing-top-bar"> -->
         <div
           class="bg-drawing-menu"
           data-close-button="Do you want to save the changes
@@ -85,17 +60,15 @@
           <div class="bg-drawing-button"></div>
           <div class="bg-drawing-button"></div>
         </div>
-        <!-- </div> -->
         <div class="file-name-menu">
           <div
             class="file-name tooltip"
-            data-tooltip="about.html \n ~/code/website.html"
+            data-tooltip="about.html
+             ~/code/website.html"
           >
-            about.html <br />
-            ~/code/website.html
+            about.html
           </div>
         </div>
-        <!-- <span class="file-name tooltip">about.html</span> -->
 
         <div class="right-menu">
           <svg
@@ -240,7 +213,6 @@
         <p class="check-icon-text icon">Prettier</p>
       </div>
 
-      <!-- <div class="bg-shapee "> -->
       <div class="summary">
         <h2 class="summary-heading">Summary</h2>
         <p class="summary-text">
@@ -263,13 +235,11 @@
         </p>
         <h2 class="summary-heading">Experience</h2>
         <div class="summary-text">
-          <!-- <div> -->
           <ul class="two-columns area">
             <li>Backend&nbsp; () =></li>
             <li>Frontend () =></li>
             <li>Database () =></li>
           </ul>
-          <!-- </div> -->
           <ul class="two-columns key-skills">
             <li>NodeJS, TS, Java, Spring</li>
             <li>React</li>
@@ -287,31 +257,17 @@
         </p>
         <br />
       </div>
-      <!-- </div> -->
     </div>
-    <!-- <div class="navbar">
-    <ul class=" footer-bar navbar">
-      <li class="menu-item"><a href="https://stackoverflow.com/users/4244112/kai" class="fa fa-stack-overflow nav-link"></a>stackoverflow</li>
-      <li class="menu-item"><a href="https://github.com/spik3r" class="fa fa-github nav-link"></a>github</li>
-      <li class="menu-item"><a href="https://www.linkedin.com/in/kaiftait" class="fa fa-linkedin nav-link"></a>linkedin</li>
-    </ul>
-  </div> -->
-    <!-- <div class="hero"> -->
 
-    <!-- <nav class="navcontainer"> -->
-
-    <!-- </nav> -->
     <script>
       const toggleNav = () => {
         const navElement = document.querySelector("nav input");
-        // .onclick = function() {
         console.log("navElement.checked", navElement.checked);
         if (navElement.checked) {
           navElement.setAttribute("aria-expanded", true);
         } else {
           navElement.setAttribute("aria-expanded", false);
         }
-        // }
       };
       const toggleStringBoolean = (str) => {
         console.log("toggle:", str);
@@ -319,30 +275,7 @@
         console.log("toggle result", result);
         return result;
       };
-      const toggleNavHandler = () => {
-        const showWhenClosed = Array.from(
-          document.querySelectorAll('[data-show-nav="closed"]')
-        );
-        console.log("showWhenClosed", showWhenClosed);
-        const showWhenOpen = Array.from(
-          document.querySelectorAll('[data-show-nav="open"]')
-        );
-        console.log("showWhenOpen", showWhenOpen);
 
-        const navState = Array.from(
-          document.querySelectorAll("[data-nav-open]")
-        );
-        navState.map((el) => {
-          const attribute = el.getAttribute("data-nav-open");
-          console.log("attribute", attribute);
-          el.setAttribute("data-nav-open", `${toggleStringBoolean(attribute)}`);
-        });
-
-        // const body = document.querySelector(".body");
-        // const data = body.getAttributeNames();
-        // const data = body.getAttribute("data-show-nav-close-icon");
-        // console.log("data", data);
-      };
       const closeClickHandler = () => {
         const pageContent = document.querySelector(".bg-image");
         pageContent.classList.add("fade-out");

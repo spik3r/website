@@ -6,7 +6,7 @@
   border-radius: 50%;
 }
 @media (max-width: 1000px) {
-  .bg-drawing-bottom-bar .github-icon {
+  /* .bg-drawing-bottom-bar .github-icon {
     top: 0.5vh;
     left: 1vh;
     width: 5vw;
@@ -29,6 +29,13 @@
     width: 5vw;
     top: 0.5vh;
     right: 5vh;
+  } */
+  .bg-drawing-bottom-bar,
+  .bg-drawing-bottom-bar .check-icon,
+  .bg-drawing-bottom-bar .check-icon-1,
+  .bg-drawing-bottom-bar .check-icon-text,
+  .bg-drawing-bottom-bar .github-icon {
+    display: none;
   }
 
   .bg-drawing .file-name-menu {
@@ -38,7 +45,6 @@
     z-index: 1;
     margin-top: 1em;
     margin-left: 1em;
-    /* position: relative; */
     overflow-x: auto;
     overflow-y: auto;
   }
@@ -81,7 +87,6 @@
   .bg-image .bg-drawing {
     height: 68vh;
     top: 5em;
-    /* inset: 10vh 0 0 0; */
   }
 
   .bg-image .bg-drawing:before {
@@ -208,7 +213,6 @@ html {
 }
 
 .bg-drawing-bottom-bar {
-  /* content: ""; */
   position: absolute;
   width: 72.7vw;
   height: 3.5vh;
@@ -268,18 +272,14 @@ html {
   align-items: center;
   justify-content: center;
   white-space: pre-line;
-  /* transition-delay: 0.1s;
-  transform: scale(1); */
   padding: 8px;
   width: 21vw;
   left: 3vw;
   background-color: #a6a6a6;
   color: #2e2e2e;
   position: absolute;
-  /* content: "fooooo.html"; */
   content: attr(data-close-button);
   border-radius: 8%;
-  /* content: attr(data-close-button); */
   z-index: 11;
 }
 
@@ -295,17 +295,6 @@ html {
   background: red;
   z-index: 20;
 }
-/* .bg-drawing-button:nth-child(1):hover {
-  transition-delay: 0.1s;
-  transform: scale(1);
-  padding: 16px;
-  width: 7vw;
-  color: #3a3d41;
-  position: static;
-  border-radius: 52% 40% 35% 60% / 63% 33% 61% 33%;
-  content: attr(data-close);
-  z-index: 20;
-} */
 .bg-drawing-button:nth-child(2) {
   background: orange;
 }
@@ -318,29 +307,29 @@ html {
   left: 0;
   width: 72.7vw;
   background: #3c3c3c;
-  height: 3.5vh;
+  height: 2.5vh;
   position: absolute;
   z-index: 3;
 }
 .file-name {
   position: relative;
-  padding: 4px 8px;
+  padding: 2px 8px;
   content: "AboutMe.html";
   color: #a6a6a6;
   left: 0;
   width: 6vw;
   background: #2e2e2e;
-  height: 3.5vh;
+  height: 2.5vh;
   overflow: hidden;
   text-overflow: ellipsis;
   z-index: 5;
   cursor: pointer;
 }
 
-.file-name:hover {
+.file-name:hover::after {
   transition-delay: 0.1s;
   transform: scale(1);
-  padding: 20px;
+  padding: 8px;
   width: max-content;
   display: flex;
   justify-content: center;
@@ -348,10 +337,10 @@ html {
   background-color: #a6a6a6;
   border-radius: 89% 8% 89% 8% / 8% 89% 8% 89%;
   color: #3a3d41;
+  white-space: pre-line;
   content: attr(data-tooltip);
-  position: absolute;
-  /* position: static; */
-  /* z-index: 60; */
+  position: fixed;
+  z-index: 11;
 }
 
 .explorer-view-icon {
@@ -460,7 +449,6 @@ body {
   width: 68vw;
   height: 70vh;
   position: relative;
-  /* overflow: scroll; */
   overflow-x: auto;
   overflow-y: auto;
 }
@@ -486,7 +474,6 @@ body {
 }
 
 .summary-heading {
-  /* color: #4d4d4d; */
   width: 68vw;
   font-size: 1.3em;
   font-weight: 500;
@@ -494,12 +481,6 @@ body {
   text-decoration: underline #ce9178;
   color: #ce9178;
 }
-
-/* .summary-heading::first-letter {
-  font-size: 1.3rem;
-  color: #CE9178;
-  z-index: 100;
-} */
 
 @media (min-width: 40rem) {
   .nav-menu {
@@ -513,16 +494,10 @@ body {
 }
 
 .nav-image {
-  /* background-image: url('goldCoast.jpg'); */
-  /* left: 10em; */
   max-height: 5em;
   max-width: 5em;
-  /* padding: 0.2em; */
   border: 0.3em solid #4d4d4d;
-  /* background-color: #569cd6; */
-  /* position: fixed; */
   border-radius: 59% 41% 76% 24% / 56% 54% 46% 44%;
-  /* top: 5em; */
   z-index: -2;
 }
 
@@ -561,14 +536,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* margin-right: 0;
-  display: flex;
-  align-items: center;
-  justify-content: right; */
   color: pink;
   z-index: 200;
-  /* bottom: 0;
-  margin-bottom: 0; */
 }
 .navbar {
   overflow: hidden;
@@ -592,50 +561,6 @@ body {
   color: black;
   border-radius: 0% 0% 8% 8% / 8% 8% 100% 100%;
 }
-/* 
-.menu {
-  width: 4rem; 
-  aspect-ratio: 1;
-  background: linear-gradient(#000 50%, #0000 0) 0 0/100% 40%;
-}
-
-.menu-rounded {
-  width: 150px; 
-  aspect-ratio: 1;
-  background: radial-gradient(closest-side at 12.5% 25%, #000 96%, #0000) 0 0/80%
-      40%,
-    linear-gradient(#000 50%, #0000 0) top/80% 40% repeat-y;
-}
-
-.close {
-  width: 4rem; 
-  aspect-ratio: 1;
-  background: conic-gradient(from 90deg at 33% 33%, #0000 90deg, #000 0) 100%
-    100%/60% 60%;
-  transform: translateZ(0px) rotate(45deg);
-}
-
-.close-rounded {
-  --s: 150px; 
-  width: var(--s);
-  aspect-ratio: 1;
-  padding: calc(var(--s) * 0.1);
-  box-sizing: border-box;
-  --_g: radial-gradient(farthest-side, #000 96%, #0000);
-  background: radial-gradient(closest-side at 50% 12.5%, #000 96%, #0000) top /
-      20% 80% repeat-y,
-    radial-gradient(closest-side at 12.5% 50%, #000 96%, #0000) left/80% 20%
-      repeat-x,
-    conic-gradient(from 90deg at 33% 33%, #0000 90deg, #000 0) 100% 100%/60% 60%
-      padding-box content-box;
-  transform: translateZ(0) rotate(45deg);
-} */
-
-/* the CSS code to style the menu for big screens */
-/* nav { ... }
-nav .menu { ... }
-nav .menu li a { ... }
-nav .menu li a:hover { ... } */
 
 .hamburger-nav {
   background: #4d4d4d;
@@ -646,7 +571,6 @@ nav .menu li a:hover { ... } */
 }
 
 .menu li a {
-  /* position: relative; */
   padding: 10px 20px;
   color: #9cdcfe;
   text-decoration: none;
@@ -656,27 +580,18 @@ nav .menu li a:hover { ... } */
 }
 .menu li li:before {
   content: "";
-  /* position: absolute; */
   inset: 0;
   border: solid 1px white;
   border-radius: 4px;
 }
 .menu li ~ li:after {
   content: "";
-  /* position: absolute; */
   left: 0;
   right: 0;
-  /* inset: 0; */
   margin-bottom: 20px;
   border-top: solid 1px white;
-  /* top: 0;
-  bottom: 0; */
 }
 
-/* .menu li:hover {
-  flex: 3;
-  background-color: #4d4d4d;
-} */
 .menu li a:hover {
   text-decoration: underline;
   color: #fff;
@@ -726,15 +641,11 @@ nav .menu li a:hover { ... } */
 }
 
 .hamburger-nav input {
-  /* the CSS style for the hamburger icon */
-  display: none; /* hide the input on big screen */
+  display: none;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   cursor: pointer;
-}
-nav input:checked {
-  /* the CSS style for the close icon */
 }
 
 .menu {
@@ -749,7 +660,7 @@ nav input:checked {
   position: fixed;
   background: inherit;
   flex-direction: column;
-
+  position: fixed;
   align-items: flex-end;
   justify-content: center;
   gap: 16px;
@@ -759,6 +670,7 @@ nav input:checked {
   inset: 0 0 0;
   background-color: #3a3d41;
   border-radius: 0% 0% 3% 3% / 0% 0% 3% 3%;
+  z-index: 20;
 }
 
 .hamburger-nav input {
