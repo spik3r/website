@@ -109,6 +109,21 @@
   .bg-image {
     scale: 1;
   }
+  .bg-drawing-menu:hover::after {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: pre-line;
+    padding: 8px;
+    width: 21vw;
+    left: 3vw;
+    background-color: #a6a6a6;
+    color: #2e2e2e;
+    position: absolute;
+    content: attr(data-close-button);
+    border-radius: 8%;
+    z-index: 11;
+  }
 }
 
 * {
@@ -266,21 +281,6 @@ html {
   justify-content: space-around;
   align-items: center;
   z-index: 10;
-}
-.bg-drawing-menu:hover::after {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  white-space: pre-line;
-  padding: 8px;
-  width: 21vw;
-  left: 3vw;
-  background-color: #a6a6a6;
-  color: #2e2e2e;
-  position: absolute;
-  content: attr(data-close-button);
-  border-radius: 8%;
-  z-index: 11;
 }
 
 .bg-drawing-button {
@@ -547,16 +547,31 @@ body {
 }
 
 .menu-item {
+  /* display: none; */
   flex: 1;
-  display: block;
+  /* display: block; */
+  /* position: fixed; */
   color: #ffffff;
   text-align: center;
   padding: 8px;
   text-decoration: none;
   font-size: 1.6rem;
+  z-index: 5;
 }
 
-.menu-item:hover {
+.menu-item[data-menu-open="true"] {
+  display: block;
+  /* margin-right: 0px; */
+  /* z-index: 6; */
+}
+
+.menu-item[data-menu-open="false"] {
+  display: none;
+  /* margin-right: -100px; */
+  /* z-index: 4; */
+}
+
+.menu-item[data-menu-open="true"]:hover {
   background: #4d4d4d;
   color: black;
   border-radius: 0% 0% 8% 8% / 8% 8% 100% 100%;
@@ -577,18 +592,22 @@ body {
   font-size: 20px;
   font-weight: bold;
   font-family: sans-serif;
+  position: relative;
 }
 .menu li li:before {
+  /* position: absolute; */
   content: "";
   inset: 0;
   border: solid 1px white;
   border-radius: 4px;
 }
 .menu li ~ li:after {
+  /* position: absolute; */
   content: "";
   left: 0;
   right: 0;
   margin-bottom: 20px;
+  /* inset: 0; */
   border-top: solid 1px white;
 }
 
@@ -599,7 +618,7 @@ body {
 .hamburger-nav input {
   width: 40px;
   aspect-ratio: 1;
-  display: none;
+  /* display: none; */
   overflow: hidden;
   margin: 10px 20px 10px auto;
   box-sizing: border-box;

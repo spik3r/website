@@ -27,16 +27,16 @@
           onclick="toggleNav()"
         />
         <ul id="menu" class="menu">
-          <li class="menu-item"><a href="/">Home</a></li>
-          <li class="menu-item">
+          <li class="menu-item" data-menu-open="false"><a href="/">Home</a></li>
+          <li class="menu-item" data-menu-open="false">
             <a href="https://stackoverflow.com/users/4244112/kai"
               >stackoverflow</a
             >
           </li>
-          <li class="menu-item">
+          <li class="menu-item" data-menu-open="false">
             <a href="https://github.com/spik3r">github</a>
           </li>
-          <li class="menu-item">
+          <li class="menu-item" data-menu-open="false">
             <a href="https://www.linkedin.com/in/kaiftait">linkedin</a>
           </li>
         </ul>
@@ -262,11 +262,18 @@
     <script>
       const toggleNav = () => {
         const navElement = document.querySelector("nav input");
+        const menuItems = document.querySelectorAll(".menu-item");
         console.log("navElement.checked", navElement.checked);
         if (navElement.checked) {
           navElement.setAttribute("aria-expanded", true);
+          menuItems.forEach((item) =>
+            item.setAttribute("data-menu-open", "true")
+          );
         } else {
           navElement.setAttribute("aria-expanded", false);
+          menuItems.forEach((item) =>
+            item.setAttribute("data-menu-open", "false")
+          );
         }
       };
       const toggleStringBoolean = (str) => {
