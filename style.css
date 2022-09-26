@@ -54,6 +54,7 @@
   .body .bg-image {
     position: static;
     margin-left: 0;
+    margin-top: 10vh;
   }
   .body .bg-drawing-bottom-bar {
     position: fixed;
@@ -540,7 +541,7 @@ body {
   z-index: 100;
 }
 .navbar {
-  overflow: hidden;
+  /* overflow: hidden; */
   /* position: fixed; */
   width: 100%;
   /* max-height: 5em; */
